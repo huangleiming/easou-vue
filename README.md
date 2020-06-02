@@ -1,21 +1,54 @@
-# easou-vue
+# 前言
 
-> A Vue.js project
+项目【宜搜小说】
 
-## Build Setup
+学习vue时，看文档的时候会不时的参照网上一些项目源码，无奈大部分都是简单的demo且碎片化严重，而且没动手做过没法加深理解。
 
-``` bash
-# install dependencies
+所以我在看完vue的文档后，打算动手用vue写一些项目。
+
+因为不会UI设计又对架构不是很在行，没办法只有在自己手机上选了哔哩哔哩。项目做一部分时发现我过分的乐观了，工作量实在太多而且视频资源我实在没有，所以就放下了。又从新挑选，正好那几天又迷上看小说，所以就选了我高中时喜欢的宜搜小说。
+
+此项目参照宜搜app布局和色调。涉及书籍展示，搜索，阅读，登录，会员权益等等（都还没完成）。
+
+目前在推进中，可能后续会舍弃一些页面及功能。
+
+
+## 技术栈
+
+vue2 + vuex + vue-router + webpack + ES6/7 + axios + sass
+
+
+## 项目运行
+
+```
 npm install
 
-# serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 关于接口数据
+
+此项目的所有接口数据都还没影呢
+
+打算是用node搭建后台，必不可少的书籍数据也许会采用算法自动生成一些假数据。相关的代码后续会一起提交到本仓库。
+
+
+# 目标功能
+- [x] 搜索书籍 -- 进行
+- [x] 展示所搜索的书籍列表 -- 进行
+- [x] 个人详情页面 -- 进行
+- [x] 登录、注册 -- 进行
+- [x] 修改密码 -- 还没影
+- [x] 填充书架 -- 进行
+- [x] 书籍阅读页面 -- 还没影
+- [x] 阅读辅助工具 -- 还没影
+- [x] 充值页面 -- 还没影
+- [x] 浏览历史 -- 还没影
+- [x] 收藏 -- 还没影
+- [x] 消息 -- 还没影
+- [x] 听书 -- 还没影
+- [x] 服务中心 -- 还没影
+
+
+# 项目布局
