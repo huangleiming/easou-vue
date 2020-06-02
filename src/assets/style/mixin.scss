@@ -1,0 +1,43 @@
+@mixin position($mode, $top, $left, $bottom, $right){
+    position: $mode;
+    @if $top {
+        top: $top;
+    }
+    @if $left{
+        left: $left;
+    }
+    @if $right{
+        left: $right;
+    }
+    @if $bottom{
+        left: $bottom;
+    }
+}
+@mixin sc($size, $color){
+	font-size: $size;
+	color: $color;
+}
+@mixin wh($width, $height){
+	width: $width;
+	height: $height;
+}
+@mixin df($items, $direction, $content){
+    display: flex;
+    display: -webkit-flex;
+    @if $items{
+        align-items: $items;
+    }
+    @if $direction{
+        flex-direction: $direction;
+    }
+    @if $content{
+        justify-content: $content;
+    }
+}
+@mixin ellipsis(){
+    display: block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
