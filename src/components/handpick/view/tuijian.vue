@@ -1,18 +1,20 @@
 <template>
     <div class="roll tuijian">
-        <ul>
+        <ul class="book-ul">
             <li v-for="(i, index) in books" :key="index" @click="goto(i.id)">
                 <h5>{{i.title}}</h5>
-                <div>
-                    <div :style="{backgroundImages:'url('+i.url+')'}"></div>
-                    <div>
+                <div class="b-msg">
+                    <div class="b-msg-img" :style="{backgroundImages:'url('+i.url+')'}"></div>
+                    <div class="b-msg-text">
                         <h4>{{i.name}}</h4>
                         <p>{{i.synopsis}}</p>
-                        <p>
-                            <span>{{i.writer}}</span>
-                            <span>{{i.number}}万字</span>
-                            <span>{{i.class}}</span>
-                        </p>
+                        <label>
+                            <span class="b-writer">{{i.writer}}</span>
+                            <span>
+                                <span class="b-number">{{i.number}}万字</span>
+                                <span class="b-class">{{i.class}}</span>
+                            </span>
+                        </label>
                     </div>
                 </div>
             </li>
@@ -27,6 +29,17 @@ export default {
     data() {
         return {
             books: [
+                {
+                    id: "123456",
+                    title: "东方玄幻精品好书",
+                    url: "",
+                    name: "将夜",
+                    synopsis:
+                        "与天斗，其乐无穷。巴萨的，吧的地方不大舒服阿萨的，静安寺带回家发货京哈是否看",
+                    writer: "猫腻",
+                    number: "374.2",
+                    class: "东方玄幻"
+                },
                 {
                     id: "123456",
                     title: "东方玄幻精品好书",
@@ -64,8 +77,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../assets/style/mixin";
+
 .tuijian {
-    li {
+    ul {
+        @include view-ul-title();
     }
 }
 </style>

@@ -34,10 +34,84 @@
         justify-content: $content;
     }
 }
-@mixin ellipsis(){
-    display: block;
-    overflow: hidden;
-    word-break: keep-all;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+@mixin ellipsis($num){
+    @if $num > 1 {
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }@else {
+        display: block;
+        overflow: hidden;
+        word-break: keep-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+@mixin border($solid, $width, $color){
+    border-style: $solid;
+    border-width: $width;
+    border-color: $color;
+}
+
+@mixin li-b-msg(){
+    .b-msg-img {
+        @include wh(30%, auto);
+    }
+    .b-msg-text {
+        width: 70%;
+        padding-left: 1rem;
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #2e2e2e;
+        }
+        p {
+            height: 2.5rem;
+            margin: 1.2rem 0rem 0.8rem 0rem;
+            @include sc(0.9rem,#939393);
+            @include ellipsis(2);
+        }
+        label {
+            @include df(null, row, space-between);
+            .b-writer {
+                @include sc(0.9rem, #b0b0b0);
+            }
+            .b-number,
+            .b-class {
+                @include sc(0.6rem, #dddddd);
+                @include border(solid, 1px, #dddddd);
+                border-radius: 10px;
+                padding: 0.08rem 0.2rem;
+            }
+        }
+    }
+}
+
+@mixin view-ul-title(){
+    li {
+        padding: 1rem;
+        h5 {
+            margin-bottom: 1rem;
+            @include sc(0.9rem, #919191);
+        }
+        .b-msg {
+            display: flex;
+            flex-direction: row;
+            @include li-b-msg();
+        }
+    }
+}
+
+@mixin view-ul-notitle(){
+    li {
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        @include li-b-msg();
+    }
 }

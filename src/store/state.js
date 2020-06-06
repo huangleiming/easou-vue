@@ -103,16 +103,10 @@ export default {
     readTime: 0,
 
     /**
-     *@param {Array} history 搜索历史记录
+     *@param {Array} history 搜索历史记录 最大20条记录
     */
     history: [
-        '反对和附近的各方 ',
-        'fdgggfgd谷歌',
-        '方法 ',
-        '发广告滚动',
-        '东方给官方 ',
-        '豆腐干反对',
-        '官方到各地广泛广泛法国德国 ',
-        'fdgggfgd分隔符谷歌',
+        '搜索历史001 ',
+        '搜索历史002'
     ],
 }

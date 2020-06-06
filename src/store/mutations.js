@@ -65,7 +65,13 @@ export default {
     },
 
     [ADD_SEARCH_HISTORY](state, info) {
-        state.history.push(info);
+        let history = state.history;
+        if (history.indexOf(info) == -1) {
+            history.push(info);
+        }
+        if (history.length > 20) {
+            history.splice(0, 1);
+        }
     },
     [DELETE_SEARCH_HISTORY](state) {
         state.history = [];

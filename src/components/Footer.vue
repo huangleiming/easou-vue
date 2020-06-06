@@ -70,7 +70,7 @@ export default {
 }
 .active {
     span {
-        color: red;
+        color: #fc7439;
     }
 }
 </style>

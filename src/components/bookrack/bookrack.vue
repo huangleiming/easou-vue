@@ -76,16 +76,16 @@ export default {
         padding: 0.6rem 1.5rem 0rem 1.5rem;
         @include df(center, row, space-between);
         span {
-            @include sc(0.9rem, #bfbfbf);
+            @include sc(0.9rem, #999999);
             @include df(center, row, space-between);
             :nth-child(1) {
-                @include sc(0.9rem, #bfbfbf);
+                @include sc(0.9rem, #999999);
             }
             :nth-child(2) {
                 @include sc(0.9rem, #ffffff);
                 @include wh(4.2rem, 1.8rem);
                 margin-left: 0.5rem;
-                background-color: red;
+                background-color: #fc6e51;
                 border-radius: 20px;
                 text-align: center;
                 line-height: 1.8rem;
@@ -112,21 +112,15 @@ export default {
             span {
                 margin-top: 0.3rem;
                 width: 100%;
-                display: block;
-                overflow: hidden;
-                word-break: keep-all;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                font-size: 0.8rem;
+                @include ellipsis(1);
+                @include sc(1rem, #282828);
             }
             span.status {
-                @include sc(0.6rem, #bfbfbf);
+                @include sc(0.8rem, #999999);
             }
             div.extra {
                 @extend div.cover;
-                border-style: solid;
-                border-color: #bfbfbf;
-                border-width: 1px;
+                @include border(solid, 1px, #dddddd);
                 font-size: 4rem;
             }
         }
