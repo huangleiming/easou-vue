@@ -83,7 +83,7 @@
             }
             .b-number,
             .b-class {
-                @include sc(0.6rem, #dddddd);
+                @include sc(0.75rem, #dddddd);
                 @include border(solid, 1px, #dddddd);
                 border-radius: 10px;
                 padding: 0.08rem 0.2rem;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const http = axios.create({
-    baseURL: 'http://localhost:8080/api/',
+    baseURL: 'http://127.0.0.1:8001/api/',
     timeout: 3000
 });
 
@@ -19,15 +19,20 @@ http.interceptors.request.use(
 
 http.interceptors.response.use(
     response => {
-        if (response.errCode && response.errCode == 'ok') {
-            return Promise.resolve(JSON.parse(response.data));
+        // console.log(response);
+        if (!response.data || typeof response.data != 'object') {
+            return Promise.reject({
+                errCode: 'fall',
+                msg: '返回数据格式不合法'
+            });
         }
-        return Promise.reject({
-            errCode: 'fall',
-            msg: response.msg ? response.msg : '未知错误'
-        });
+        if (response.data.errCode != 'ok') {
+            return Promise.reject(response.data);
+        }
+        return Promise.resolve(response.data.result);
     },
     error => {
+        // console.log(error.message);
         return Promise.reject({
             errCode: 'fall',
             msg: error.message
@@ -38,9 +43,9 @@ http.interceptors.response.use(
 export const post = async function (url, data) {
     return new Promise((resolve, reject) => {
         http({
+            method: 'POST',
             url: url,
-            data: data || {},
-            method: 'post'
+            data: JSON.stringify(data || {})
         }).then(response => {
             resolve(response);
         }).catch(error => {

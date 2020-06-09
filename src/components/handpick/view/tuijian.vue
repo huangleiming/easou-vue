@@ -28,18 +28,10 @@ import { post } from "../../../axios";
 export default {
     data() {
         return {
+            step: 20,
+            pageNumber: 0,
+            pageTotal: null,
             books: [
-                {
-                    id: "123456",
-                    title: "东方玄幻精品好书",
-                    url: "",
-                    name: "将夜",
-                    synopsis:
-                        "与天斗，其乐无穷。巴萨的，吧的地方不大舒服阿萨的，静安寺带回家发货京哈是否看",
-                    writer: "猫腻",
-                    number: "374.2",
-                    class: "东方玄幻"
-                },
                 {
                     id: "123456",
                     title: "东方玄幻精品好书",
@@ -55,20 +47,32 @@ export default {
         };
     },
     created() {
-        this.getData();
+        this.loadBooks();
     },
     methods: {
-        goto() {
-            this.getData();
+        goto(id) {
+            this.loadBooks();
         },
-        getData(id) {
-            post("handepick", {
-                id: id
-            })
-                .then(function(response) {
-                    console.log(response);
+        loading(result) {
+            this.pageNumber = result.pageNumber;
+            this.pageTotal = result.pageTotal;
+            this.books.push(...result.books);
+        },
+        loadBooks() {
+            if (this.pageTotal && this.pageNumber >= this.pageTotal) {
+                console.log("没有更多数据了");
+                return;
+            }
+            let data = {
+                step: this.step,
+                pageNumber: this.pageNumber
+            };
+            post("tuijian", data)
+                .then(result => {
+                    console.log(result);
+                    this.loading(result);
                 })
-                .catch(function(error) {
+                .catch(error => {
                     console.log(error);
                 });
         }
