@@ -11,7 +11,7 @@ http.interceptors.request.use(
     },
     error => {
         return Promise.reject({
-            errCode: 'fall',
+            errCode: 'fail',
             msg: '发起请求失败'
         });
     }
@@ -22,7 +22,7 @@ http.interceptors.response.use(
         // console.log(response);
         if (!response.data || typeof response.data != 'object') {
             return Promise.reject({
-                errCode: 'fall',
+                errCode: 'fail',
                 msg: '返回数据格式不合法'
             });
         }
@@ -34,7 +34,7 @@ http.interceptors.response.use(
     error => {
         // console.log(error.message);
         return Promise.reject({
-            errCode: 'fall',
+            errCode: 'fail',
             msg: error.message
         });
     }

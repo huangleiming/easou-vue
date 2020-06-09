@@ -10,7 +10,7 @@ http.createServer(function (request, response) {
     /**
     if (!request.method || request.method !== 'POST') {
         config.send(response,{
-            errCode: 'fall',
+            errCode: 'fail',
             msg: '请使用post请求'
         }, 400);
         return;
@@ -21,7 +21,7 @@ http.createServer(function (request, response) {
     route(handle, pathname, function (status, callback) {
         if (status !== 'Found') {
             return config.send(response, {
-                errCode: 'fall',
+                errCode: 'fail',
                 msg: 'Not Found'
             }, 404);
         }
@@ -32,7 +32,7 @@ http.createServer(function (request, response) {
                 callback(request, response);
             }, function () {
                 config.send(response, {
-                    errCode: 'fall',
+                    errCode: 'fail',
                     msg: 'get数据非JSON格式'
                 });
             });
@@ -42,7 +42,7 @@ http.createServer(function (request, response) {
                 callback(request, response);
             }, function () {
                 config.send(response, {
-                    errCode: 'fall',
+                    errCode: 'fail',
                     msg: 'post数据非JSON格式'
                 });
             });
