@@ -12,12 +12,16 @@
             </span>
         </div>
         <ul class="rack">
-            <li v-for="(i, index) in books" :key="index" @click="goto('reading',{id:i.id})">
+            <li
+                v-for="(i, index) in bookcase"
+                :key="index"
+                @click="goto('reading/'+i.id, {id: i.id, origin: 'local'})"
+            >
                 <div class="cover" :style="{backgroundImage:'url('+i.url+')'}"></div>
                 <span>{{i.name}}</span>
                 <span class="status">{{i.status}}</span>
             </li>
-            <li v-show="true" :key="books.length + 1" @click="record('handpick')">
+            <li v-show="true" :key="bookcase.length + 1" @click="record('handpick')">
                 <div class="iconfont icon-shizi extra"></div>
                 <span>&nbsp;</span>
                 <span>&nbsp;</span>
@@ -37,15 +41,10 @@ export default {
         console.log("bookrack->created");
     },
     computed: {
-        ...mapState(["readTime", "books"])
+        ...mapState(["readTime", "bookcase"])
     },
     methods: {
-        ...mapMutations([
-            "ADD_BOOK",
-            "DELETE_BOOK",
-            "RECODE_BOOK_STATUS",
-            "RECODE_RECORD"
-        ]),
+        ...mapMutations(["RECODE_RECORD"]),
         goto(target, data = {}) {
             this.$router.push({ path: "/" + target, query: data });
         },

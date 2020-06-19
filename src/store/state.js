@@ -28,82 +28,76 @@ export default {
     coupons: 0,
     integral: 0,
 
-    /**书架
-     * @param {String} id 书籍id
-     * @param {String} name 书名
-     * @param {String} src 书籍封面image 'url'
-     * @param {String} status 书籍阅读状态 '已读' '未读'
-     */
-    books: [
-        {
-            id: '123',
-            name: '你结婚水水',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123reewr',
-            name: '你结婚水水警方打击对方',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123343443',
-            name: '你结婚水水士大夫受到太阳高度',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123343443',
-            name: '爱神的箭噶撒旦撒旦好的',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123343443',
-            name: '地方的飞机发动机分隔符',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123343443',
-            name: '打扫房间回复的是第三方付费电视 ',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123343443',
-            name: '但是房价和第三方',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123343443',
-            name: '大师傅士大夫',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123343443',
-            name: '你结婚水水士大夫受到太阳高度',
-            src: '',
-            status: '未读'
-        },
-        {
-            id: '123343443',
-            name: '你结婚水水士大夫受到太阳高度',
-            src: '',
-            status: '未读'
-        }
-    ],
-
     /**
      *@param {Number} readTime 本周阅读时长 分钟
     */
     readTime: 0,
 
     /**
-     *@param {Array} history 搜索历史记录 最大20条记录
+     * @member bookcase 当前阅读书籍数据
+     * @param {Number} id
+     * @param {String} name
+     * @param {String} src 书籍封面
+     * @param {String} status 阅读状态【未读，已读】
+     * @param {String} synopsis 书籍剧情简要
+     * @param {String} writer 书籍作者
+     * @param {String} class 书籍类别 例如：玄幻，修仙，都市 等
+     * @param {String} channel 频道【boys，girls，publish】男生，女生，出版
+     * @param {String} type 类型【limitfree，monthly，free】限免，包月，免费
+     * @param {String} bookStatus 书籍状态【finish，serials】完结，连载
+     * @param {String} words 字数【minwords，words，maxwords】30以下，30-100，100以上 万字
+     * @param {Array} chapters 全部章节
+     * @param {Number} total 本书全部章节数量
+     * @param {Number} activeChapter 当前阅读的章节序号
+     * @param {Number} activePage 当前阅读到本章的页数
+    */
+    bookcase: [
+        {
+            id: 1001,
+            name: '书名1',
+            src: '',
+            status: '未读',
+            synopsis: '',
+            writer: '土豆',
+            class: '东方玄幻',
+            channel: 'girls',
+            type: 'free',
+            bookStatus: 'finish',
+            words: 'minwords',
+            chapters: [{
+                title: '章节名', //本章节名称
+                content: '内容', //本章节内容
+                number: 0        //本章节序号
+            }],
+            total: '总章节数',
+            activeChapter: 0,
+            activePage: 0
+        },
+        {
+            id: 1002,
+            name: '书名2',
+            src: '',
+            status: '未读',
+            synopsis: '',
+            writer: '土豆',
+            class: '东方玄幻',
+            channel: 'girls',
+            type: 'free',
+            bookStatus: 'finish',
+            words: 'minwords',
+            chapters: [{
+                title: '章节名',
+                content: '内容',
+                number: 0
+            }],
+            total: '总章节数',
+            activeChapter: 0,
+            activePage: 0
+        }
+    ],
+
+    /**
+     *@member {Array} history 搜索历史记录 最大20条记录
     */
     history: [
         '搜索历史001 ',

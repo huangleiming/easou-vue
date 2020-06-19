@@ -11,7 +11,7 @@
             />
             <span class="reset" v-show="showReset" @click.stop.prevent="reset">x</span>
         </header>
-        <search-tip v-if="showSearchResult" :postData="postData"></search-tip>
+        <search-tip v-if="showSearchResult" :searchInfo="searchInfo"></search-tip>
         <div v-else>
             <section class="history">
                 <div class="section-head">
@@ -61,7 +61,7 @@ export default {
             showReset: false,
 
             showSearchResult: false,
-            postData: "",
+            searchInfo: "",
 
             searchText: "",
 
@@ -94,7 +94,7 @@ export default {
         reset() {
             this.showReset = false;
             this.showSearchResult = false;
-            this.postData = "";
+            this.searchInfo = "";
             this.searchText = "";
         },
         changeSearchList() {
@@ -107,7 +107,7 @@ export default {
                 .catch(error => {});
         },
         search(text) {
-            this.postData = text;
+            this.searchInfo = text;
             this.showSearchResult = true;
             this.showReset = true;
         },

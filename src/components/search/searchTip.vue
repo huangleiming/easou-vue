@@ -5,7 +5,11 @@
             <span @click="onOff">筛选</span>
         </div>
         <ul v-show="!showFilter">
-            <li v-for="(book, index) in books" :key="index">
+            <li
+                v-for="(book, index) in books"
+                :key="index"
+                @click="goto('reading/'+book.id, {id: book.id, origin: 'non-local'})"
+            >
                 <div class="b-msg-img" :style="{backgroundImages:'url('+book.url+')'}"></div>
                 <div class="b-msg-text">
                     <h4>{{book.name}}</h4>
@@ -43,12 +47,12 @@
             <label>
                 <span
                     ref="tip"
-                    :class="{active:status == 'finish'}"
+                    :class="{active:bookStatus == 'finish'}"
                     @click="selectStatus($event, 'finish')"
                 >完结</span>
                 <span
                     ref="tip"
-                    :class="{active:status == 'serials'}"
+                    :class="{active:bookStatus == 'serials'}"
                     @click="selectStatus($event,'serials')"
                 >连载</span>
             </label>
@@ -103,7 +107,7 @@ export default {
         return {
             showFilter: false,
             channel: "",
-            status: "",
+            bookStatus: "",
             type: "",
             words: "",
 
@@ -111,30 +115,34 @@ export default {
             alertText: ""
         };
     },
-    props: ["postData"],
+    props: ["searchInfo"],
     created() {
         this.getbooks();
     },
     watch: {
-        postData: function() {
+        searchInfo: function() {
             this.getbooks();
         }
     },
     methods: {
+        goto(target, data = {}) {
+            this.$router.push({ path: "/" + target, query: data });
+        },
         getbooks() {
-            console.log(this.postData);
-            if (this.postData) {
+            console.log(this.searchInfo);
+            if (this.searchInfo) {
                 let data = {
                     label: "search",
-                    text: this.postData,
+                    text: this.searchInfo,
                     channel: this.channel,
-                    status: this.status,
+                    bookStatus: this.bookStatus,
                     type: this.type,
                     words: this.words
                 };
                 console.log(data);
                 post("search", data)
                     .then(response => {
+                        console.log(response.books);
                         this.books = response.books;
                     })
                     .catch(error => {
@@ -149,7 +157,7 @@ export default {
             this.channel = flag;
         },
         selectStatus(e, flag) {
-            this.status = flag;
+            this.bookStatus = flag;
         },
         selectType(e, flag) {
             this.type = flag;
@@ -163,7 +171,7 @@ export default {
                 tip[i].classList.remove("active");
             }
             this.channel = "";
-            this.status = "";
+            this.bookStatus = "";
             this.type = "";
             this.words = "";
         },
@@ -191,6 +199,7 @@ export default {
     ul {
         @include wh(100%, calc(100% - 3rem));
         @include view-ul-notitle();
+        overflow-y: scroll;
     }
     .filter {
         @include wh(100%, calc(100% - 3rem));

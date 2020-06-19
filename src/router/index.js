@@ -4,6 +4,7 @@ const index = () => import('../views/index');
 const login = () => import('../views/login');
 const home = () => import('../views/home');
 const search = () => import('../views/search');
+const reading = () => import('../views/reading');
 
 export default [{
     path: '/',
@@ -28,6 +29,10 @@ export default [{
         {
             path: 'search',
             component: search
+        },
+        {
+            path: 'reading/:id',
+            component: reading
         }
     ]
 }]
