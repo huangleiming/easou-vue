@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">武侠仙侠页面</div>
+    <div class="viewscroll">武侠仙侠页面</div>
 </template>
 
 <script>

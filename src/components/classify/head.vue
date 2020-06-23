@@ -35,7 +35,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 header {
-    margin: 0.6rem 0;
+    position: fixed;
+    width: 100%;
+    height: 6.2rem;
+    top: 0;
+    z-index: 99;
+    padding: 0.6rem;
+    background-color: #ffffff;
     ul {
         margin: 0.5rem;
         white-space: nowrap;

@@ -1,5 +1,5 @@
 <template>
-    <div class="app">
+    <div class="home">
         <keep-alive>
             <component :is="componentId"></component>
         </keep-alive>

@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">科幻小说页面</div>
+    <div class="viewscroll">科幻小说页面</div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">出版页面</div>
+    <div class="viewscroll">出版页面</div>
 </template>
 
 <script>

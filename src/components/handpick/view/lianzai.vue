@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">连载页面</div>
+    <div class="viewscroll">连载页面</div>
 </template>
 
 <script>

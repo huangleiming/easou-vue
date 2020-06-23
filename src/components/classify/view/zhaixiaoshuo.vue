@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">宅小说页面</div>
+    <div class="viewscroll">宅小说页面</div>
 </template>
 
 <script>

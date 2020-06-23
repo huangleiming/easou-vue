@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">完结榜页面</div>
+    <div class="viewscroll">完结榜页面</div>
 </template>
 
 <script>

@@ -85,11 +85,7 @@ export default {
             type: 'free',
             bookStatus: 'finish',
             words: 'minwords',
-            chapters: [{
-                title: '章节名',
-                content: '内容',
-                number: 0
-            }],
+            chapters: [],
             total: '总章节数',
             activeChapter: 0,
             activePage: 0

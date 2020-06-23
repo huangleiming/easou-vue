@@ -1,5 +1,5 @@
 <template>
-    <div class="roll ranking">
+    <div class="ranking">
         <Head :message="message" @switchView="switchView">
             <router-link class="search" to="/search" tag="div" slot="search">
                 <input type="text" placeholder="王者荣耀" />
@@ -38,7 +38,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.search input {
-    background-image: url(../../assets/images/search.png);
+.ranking {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .search input {
+        background-image: url(../../assets/images/search.png);
+    }
 }
 </style>

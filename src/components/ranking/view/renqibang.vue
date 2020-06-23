@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">人气榜页面</div>
+    <div class="viewscroll">人气榜页面</div>
 </template>
 
 <script>

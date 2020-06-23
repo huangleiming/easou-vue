@@ -1,5 +1,5 @@
 <template>
-    <div class="roll tuijian">
+    <div class="viewscroll tuijian">
         <ul class="book-ul">
             <li v-for="(i, index) in books" :key="index" @click="goto(i.id)">
                 <h5>{{i.title}}</h5>

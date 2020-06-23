@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">热搜榜页面</div>
+    <div class="viewscroll">热搜榜页面</div>
 </template>
 
 <script>

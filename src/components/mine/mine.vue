@@ -91,7 +91,7 @@ export default {
         },
         goto() {
             this.$router.push({
-                path: "/index/login",
+                path: "/login",
                 query: { back: "onback" }
             });
         }

@@ -1,5 +1,5 @@
 <template>
-    <div class="roll">游戏竞技页面</div>
+    <div class="viewscroll">游戏竞技页面</div>
 </template>
 
 <script>

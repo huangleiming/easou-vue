@@ -1,5 +1,5 @@
 <template>
-    <div class="roll handpick">
+    <div class="handpick">
         <Head :message="message" @switchView="switchView">
             <router-link class="search" to="/search" tag="div" slot="search">
                 <input type="text" placeholder="穿越" />
@@ -39,7 +39,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.search input {
-    background-image: url(../../assets/images/search.png);
+.handpick {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .search input {
+        background-image: url(../../assets/images/search.png);
+    }
 }
 </style>

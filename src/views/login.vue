@@ -1,5 +1,5 @@
 <template>
-    <div class="roll login">
+    <div class="login">
         <div class="user">
             <label>
                 账号
