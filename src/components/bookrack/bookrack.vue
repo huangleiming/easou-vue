@@ -1,5 +1,5 @@
 <template>
-    <div class="roll bookrack">
+    <div class="bookrack">
         <header>
             <span>本周阅读时长{{readTime}}分钟&nbsp;对劵></span>
             <span class="iconfont icon-search" @click="goto('search')"></span>
@@ -61,9 +61,13 @@ export default {
 @import "../../assets/style/mixin";
 
 .bookrack {
-    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 3.2rem;
     header {
-        padding: 0.5rem;
+        padding: 1rem;
         @include df(center, row, space-between);
         :nth-child(2) {
             @include wh(2rem, 2rem);
@@ -72,7 +76,7 @@ export default {
         }
     }
     .line {
-        padding: 0.6rem 1.5rem 0rem 1.5rem;
+        padding: 0rem 1.5rem;
         @include df(center, row, space-between);
         span {
             @include sc(0.9rem, #999999);

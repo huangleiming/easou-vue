@@ -1,5 +1,5 @@
 <template>
-    <div class="roll mine">
+    <div class="mine">
         <div class="user" @click.prevent="goto()">
             <span class="iconfont icon-touxiang headPortrait"></span>
             <div class="message">
@@ -103,7 +103,11 @@ export default {
 @import "../../assets/style/mixin";
 
 .mine {
-    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 3.2rem;
     .user {
         padding: 3rem 1.6rem 0rem 1.6rem;
         display: flex;
