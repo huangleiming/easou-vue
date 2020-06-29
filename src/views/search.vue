@@ -37,7 +37,7 @@
                 </div>
                 <ul>
                     <li v-for="(r, index) in searchTopList" :key="index" @click="goto(r.id)">
-                        <span :style="{backgroundImages:'url('+r.url+')'}"></span>
+                        <span :style="{backgroundImage:r.url ? 'url('+r.url+')' : ''}"></span>
                         <span>{{r.name}}</span>
                     </li>
                 </ul>
@@ -194,6 +194,9 @@ export default {
                     width: 100%;
                     min-height: 6rem;
                     background-color: #f2512e;
+                    background-image: url(../assets/images/book.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
                 }
                 :nth-child(2) {
                     width: 100%;

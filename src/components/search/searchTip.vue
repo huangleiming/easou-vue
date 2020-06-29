@@ -10,7 +10,10 @@
                 :key="index"
                 @click="goto('reading/'+book.id, {id: book.id, origin: 'non-local'})"
             >
-                <div class="b-msg-img" :style="{backgroundImages:'url('+book.url+')'}"></div>
+                <div
+                    class="b-msg-img"
+                    :style="{backgroundImage:book.url ? 'url('+book.url+')' : ''}"
+                ></div>
                 <div class="b-msg-text">
                     <h4>{{book.name}}</h4>
                     <p>{{book.synopsis}}</p>
@@ -200,6 +203,11 @@ export default {
         @include wh(100%, calc(100% - 3rem));
         @include view-ul-notitle();
         overflow-y: scroll;
+        .b-msg-img {
+            background-image: url(../../assets/images/book.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
     }
     .filter {
         @include wh(100%, calc(100% - 3rem));

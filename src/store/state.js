@@ -55,7 +55,7 @@ export default {
         {
             id: 1001,
             name: '书名1',
-            src: '',
+            url: '',
             status: '未读',
             synopsis: '',
             writer: '土豆',
@@ -76,7 +76,7 @@ export default {
         {
             id: 1002,
             name: '书名2',
-            src: '',
+            url: '',
             status: '未读',
             synopsis: '',
             writer: '土豆',

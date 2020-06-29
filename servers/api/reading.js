@@ -30,7 +30,7 @@ module.exports = function (request, response) {
         result.book = {
             id: id, // '书籍id'
             name: config.getCommonWord(5),// '书名'
-            src: '',//封面图片
+            url: "",
             status: '未读',//阅读状态【未读，已读】
             channel: 'girls',//频道【boys，girls，publish】男生，女生，出版
             type: 'free',//类型【limitfree，monthly，free】限免，包月，免费

@@ -17,7 +17,7 @@
                 :key="index"
                 @click="goto('reading/'+i.id, {id: i.id, origin: 'local'})"
             >
-                <div class="cover" :style="{backgroundImage:'url('+i.url+')'}"></div>
+                <div class="cover" :style="{backgroundImage:i.url ? 'url('+i.url+')' : ''}"></div>
                 <span>{{i.name}}</span>
                 <span class="status">{{i.status}}</span>
             </li>
@@ -109,6 +109,7 @@ export default {
                 @include wh(100%, 10rem);
                 text-align: center;
                 line-height: 10rem;
+                background-image: url(../../assets/images/book.png);
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
             }
@@ -123,6 +124,7 @@ export default {
             }
             div.extra {
                 @extend div.cover;
+                background-image: none;
                 @include border(solid, 1px, #dddddd);
                 font-size: 4rem;
             }

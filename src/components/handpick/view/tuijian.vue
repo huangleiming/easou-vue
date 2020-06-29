@@ -4,7 +4,7 @@
             <li v-for="(i, index) in books" :key="index" @click="goto(i.id)">
                 <h5>{{i.title}}</h5>
                 <div class="b-msg">
-                    <div class="b-msg-img" :style="{backgroundImages:'url('+i.url+')'}"></div>
+                    <div class="b-msg-img" :style="{backgroundImage:i.url ? 'url('+i.url+')' : ''}"></div>
                     <div class="b-msg-text">
                         <h4>{{i.name}}</h4>
                         <p>{{i.synopsis}}</p>
@@ -31,19 +31,7 @@ export default {
             step: 20,
             pageNumber: 0,
             pageTotal: null,
-            books: [
-                {
-                    id: "123456",
-                    title: "东方玄幻精品好书",
-                    url: "",
-                    name: "将夜",
-                    synopsis:
-                        "与天斗，其乐无穷。巴萨的，吧的地方不大舒服阿萨的，静安寺带回家发货京哈是否看",
-                    writer: "猫腻",
-                    number: "374.2",
-                    class: "东方玄幻"
-                }
-            ]
+            books: []
         };
     },
     created() {
@@ -86,6 +74,11 @@ export default {
 .tuijian {
     ul {
         @include view-ul-title();
+        .b-msg-img {
+            background-image: url(../../../assets/images/book.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
     }
 }
 </style>

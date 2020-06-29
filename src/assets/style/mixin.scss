@@ -60,10 +60,10 @@
 
 @mixin li-b-msg(){
     .b-msg-img {
-        @include wh(30%, auto);
+        @include wh(24%, auto);
     }
     .b-msg-text {
-        width: 70%;
+        width: 76%;
         padding-left: 1rem;
         h4 {
             font-size: 1.2rem;
@@ -73,6 +73,8 @@
         p {
             height: 2.5rem;
             margin: 1.2rem 0rem 0.8rem 0rem;
+            line-height: 150%;
+            letter-spacing: 0.1rem;
             @include sc(0.9rem,#939393);
             @include ellipsis(2);
         }

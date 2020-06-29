@@ -31,7 +31,7 @@ module.exports = function (request, response) {
             result.books.push({
                 id: Math.random() * 666666, // '书籍id'
                 name: config.getCommonWord(5),// '书名'
-                src: '',//封面图片
+                url: "",
                 synopsis: text + config.getCommonWord(56),
                 writer: config.getCommonWord(4),
                 number: number,
