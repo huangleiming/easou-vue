@@ -53,7 +53,7 @@ module.exports = function (request, response) {
     config.send(response, {
         errCode: 'ok',
         result: {
-            pageNumber: pageNumber + 1,
+            pageNumber: pageNumber,
             pageTotal,
             books
         }
