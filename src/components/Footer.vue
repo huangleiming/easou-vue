@@ -28,12 +28,10 @@ import { mapState, mapMutations } from "vuex";
 export default {
     data() {
         return {
-            active: ""
+            active: "bookrack"
         };
     },
-    created() {
-        this.active = "bookrack";
-    },
+    created() {},
     computed: {
         ...mapState(["componentId"])
     },

@@ -12,6 +12,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   routes,
   mode: 'hash',
+  //linkActiveClass:'active',
   strict: process.env.NODE_ENV !== 'production'
 });
 

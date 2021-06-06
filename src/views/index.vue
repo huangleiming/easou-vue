@@ -11,7 +11,7 @@ export default {
     },
     methods: {
         redirect() {
-            this.$router.replace("/home");
+            this.$router.replace({path:'home'});
         }
     }
 };

@@ -79,6 +79,11 @@ export default {
     computed: {
         ...mapState(["login"])
     },
+    watch:{
+        login:function(newlogin, oldlogin){
+            this.mapstate();
+        }
+    },
     methods: {
         mapstate() {
             let state = this.$store.state;

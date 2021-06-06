@@ -1,21 +1,13 @@
 <template>
     <div class="home">
-        <keep-alive>
-            <component :is="componentId"></component>
-        </keep-alive>
+        <router-view></router-view>
         <Footer @changeView="changeView"></Footer>
     </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapMutations } from "vuex";
 import Footer from "../components/Footer";
-
-import bookrack from "../components/bookrack/bookrack";
-import handpick from "../components/handpick/handpick";
-import ranking from "../components/ranking/ranking";
-import classify from "../components/classify/classify";
-import mine from "../components/mine/mine";
 
 export default {
     data() {
@@ -24,12 +16,7 @@ export default {
         };
     },
     components: {
-        Footer,
-        bookrack,
-        handpick,
-        ranking,
-        classify,
-        mine
+        Footer
     },
     created() {
         this.listenRouter(this.$route.path);
@@ -46,10 +33,9 @@ export default {
             this.RECODE_PATH(path);
         },
         changeView(key) {
-            this.componentId = key;
-        },
-        change(key) {
-            viewId;
+            this.$router.replace({
+                path: key,
+            })
         }
     }
 };
