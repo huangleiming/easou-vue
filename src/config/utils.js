@@ -38,3 +38,33 @@ export function getWindowHeight() {
     }
     return windowHeight;
 }
+
+//防抖函数
+export function debounce(target, time){
+    let timer = null;
+    return function(){
+        let _this = this;
+        let _args = arguments;
+        if(timer){
+            clearTimeout(timer);
+        }
+        timer = setTimeout(()=>{
+            target.apply(_this, _args);
+        }, time);
+    }
+}
+
+//节流函数
+export function throttle(target, time){
+    let timer = null;
+    return function(){
+        let _this = this;
+        let _args = arguments;
+        if(!timer){
+            timer = setTimeout(()=>{
+                target.apply(_this, _args);
+                timer = null;
+            }, time);
+        }
+    }
+}
